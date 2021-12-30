@@ -1,6 +1,6 @@
 // PetGame.java
 /**
- * This is PetGame.java made by Denzven.
+ * @author Denzven
  */
 import java.util.*;
 
