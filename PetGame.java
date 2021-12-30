@@ -14,10 +14,20 @@ public class PetGame{
 
 		//Default objects of Pet and player
 		Pet PlayerPet = new Pet("DEFUALT_PET","DEFAULT_TYPE",0,100,100);
-		Player Player = new Player("DEFUALT_PLAYER",0,0,0,false);
+		Player Player = new Player("DEFUALT_PLAYER",0,0,false,false);
 
 		//PlayerInput
 		Scanner sc = new Scanner(System.in);
+
+		// Setting Player Name
+		if (Player.PlayerHasSetName == false){
+			System.out.println("Enter your Name: ");
+			String PlayerName = sc.next();
+			Player = new Player(PlayerName,0,0,false,false);
+			System.out.println(Player.PlayerName + ", good to see you here!");
+			}
+
+		// Adopting a Pet
 		if (Player.PlayerHasPet == false){
 			System.out.println("You dont have a Pet, Do you want to buy one? [type 1 for yes]");
 			int PlayerInputPet = sc.nextInt();
@@ -31,16 +41,17 @@ public class PetGame{
 
 				PlayerPet = new Pet(PlayerPetName,PlayerPetType,0,100,100);
 				Player.PlayerHasPet = true;
-			}else{
+			} else {
 				System.out.println("idk what to do now... maybe restart?");
 				System.exit(0);
 			}
 		}
 
+
 		//Main while loop
 		while(true){
 			System.out.println("Enter cmd: ");
-			System.out.println("1[stats] 2[feed] 3[play] 4[sleep] 5[chngname] 0[help]");
+			System.out.println("1[stats] 2[feed] 3[play] 4[sleep] 5[chngname] 0[help] x[exit]");
 			String PlayerInput = sc.next();
 
 			//Counts the Number of Commands and gets the Age of Pet with it
@@ -100,19 +111,26 @@ public class PetGame{
 					if(PlayerPet.PetHappiness <= 100 && PlayerPet.PetHappiness > 80){
 						System.out.println(PlayerPet.PetName + " has played and had fun already! it wants to Sleep!");
 					}
-					if(PlayerPet.PetHappiness <= 80 && PlayerPet.PetHappiness > 60){
+					else if(PlayerPet.PetHappiness <= 80 && PlayerPet.PetHappiness > 60){
 						System.out.println(PlayerPet.PetName + " was not very bored... but had fun!");
 						PlayerPet.PetHappiness = PlayerPet.PetHappiness + 3;
 
 					}
-					if(PlayerPet.PetHappiness <= 60 && PlayerPet.PetHappiness > 40){
+					else if(PlayerPet.PetHappiness <= 60 && PlayerPet.PetHappiness > 40){
 						System.out.println(PlayerPet.PetName + " was pretty bored! now its lively and happy!");
 						PlayerPet.PetHappiness = PlayerPet.PetHappiness + 10;
 					}
-					if(PlayerPet.PetHappiness <= 40 && PlayerPet.PetHappiness > 20){
-						System.out.println(PlayerPet.PetName + " was bored to death! good that it didnt run away!");
+					else if(PlayerPet.PetHappiness <= 40 && PlayerPet.PetHappiness > 20){
+						System.out.println(PlayerPet.PetName + " was extremly bored! it wants to play more!!");
 						PlayerPet.PetHappiness = PlayerPet.PetHappiness + 20;
 					}
+					else if(PlayerPet.PetHappiness < 20){
+						System.out.println(PlayerPet.PetName + " was bored to death! good that it didnt run away!");
+						PlayerPet.PetHunger = PlayerPet.PetHunger + 20;
+					}else{
+						System.out.println("Error Ocurred");
+					}
+
 
 					//Xp points
 					Player.PlayerXpPoints = Player.PlayerXpPoints + 10;
@@ -142,6 +160,14 @@ public class PetGame{
 				case "help":
 				case "0":
 					System.out.println("The Help Command isn't ready yet");
+
+					break;
+
+				case "exit":
+				case "x":
+					System.out.println("Sad to see you go :(");
+					System.out.println("Star the repo if you loved this program!");
+					System.exit(0);
 
 					break;
 
@@ -193,41 +219,41 @@ class Pet{
 // Class of Player
 class Player{
 	String PlayerName;    // Name of User
-	int PlayerAge;	      // Age of User
 	int PlayerXpPoints;   // XpPoints of User
 	int NumberOfCommands; // NumberOfCommands of User
 	boolean PlayerHasPet; // HasPet of User
+	boolean PlayerHasSetName; // HasSetName of User
 
 	public Player(
 			String PlayerName,
-			int PlayerAge,
 			int PlayerXpPoints,
 			int NumberOfCommands,
-			boolean PlayerHasPet
+			boolean PlayerHasPet,
+			boolean PlayerHasSetName
 
 		     ){
 				this.PlayerName = PlayerName;             //Name of the Player
-				this.PlayerAge = PlayerAge;               // Age of Player
 				this.PlayerXpPoints = PlayerXpPoints;     //XpPoints of Player
 				this.NumberOfCommands = NumberOfCommands; //NumberOfCommands of Player
 				this.PlayerHasPet = PlayerHasPet;         //HasPet
+				this.PlayerHasPet = PlayerHasSetName;         //HasSet
 		     }
 
 	// Methods to get all variables in Class
 	public String getPlayerName(){return PlayerName;}
-	public int getPlayerAge(){return PlayerAge;}
 	public int getPlayerXpPoints(){return PlayerXpPoints;}
 	public int getNumberOfCommands(){return NumberOfCommands;}
 	public boolean getPlayerHasPet(){return PlayerHasPet;}
+	public boolean getPlayerHasSetName(){return PlayerHasSetName;}
 
 
 	// Method for Getting Stats
 	public String getStats(){
 		String PlayerStats = "\nPlayerName: "       + this.getPlayerName()       +
-			                 "\nPlayerAge: "        + this.getPlayerAge()        +
 			                 "\nPlayerXpPoints: "   + this.getPlayerXpPoints()   +
 			                 "\nNumberOfCommands: " + this.getNumberOfCommands() +
-			                 "\nPlayerHasPet: "     + this.getPlayerHasPet();
+			                 "\nPlayerHasPet: "     + this.getPlayerHasPet()     +
+			                 "\nPlayerHasPet: "     + this.getPlayerHasSetName();
 		return(PlayerStats);
 	}
 }
