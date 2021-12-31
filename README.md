@@ -15,8 +15,9 @@ this will compile the program using javac (JAVA Compiler) and run the compiled c
 
 
 ScreenShots:
-Yes this program is very colorful and uses ANSI colors for the terminal
-Thanks to [This answer on StackOverFlow](https://stackoverflow.com/a/45444716)
+Yes this program is very colorful and uses ANSI colors for the terminal 
+
+Thanks to This Answer on [StackOverFlow](https://stackoverflow.com/a/45444716)
 
 Windows Terminal:  
 
