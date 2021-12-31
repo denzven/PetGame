@@ -20,11 +20,13 @@ Thanks to [This answer on StackOverFlow](https://stackoverflow.com/a/45444716)
 
 Windows Terminal:  
 
-![WindowsTerminalScreenShot]()  
+![WindowsTerminalScreenShot](https://github.com/denzven/PetGame/blob/main/WindowsTerminalScreenShot?raw=true)    
+
+
 
 Termux (Android):  
 
-![TermuxAndroidScreenShot]()  
+![TermuxAndroidScreenShot](https://github.com/denzven/PetGame/blob/main/TermuxAdroidScreenShot?raw=true)  
 
 
 for running the code, you could use some kind of Online Java compiler too... 🤷
