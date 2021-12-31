@@ -21,19 +21,19 @@ public class Pet{
 		  }
 
 	// Methods to get all variables in Class
-	public String getName(){return Name;}
-	public String getType(){return Type;}
-	public int getAge(){return Age;}
-	public int getHunger(){return Hunger;}
-	public int getHappiness(){return Happiness;}
+	public String getName()     {return Name;}
+	public String getType()     {return Type;}
+	public int    getAge()      {return Age;}
+	public int    getHunger()   {return Hunger;}
+	public int    getHappiness(){return Happiness;}
 
 	// Method for Getting Stats
 	public String getStats(){
-		String Stats = "\nName: "      + this.getName()       +
-					   "\nType: "      + this.getType()       +
-					   "\nAge: "       + this.getAge()        +
-					   "\nHunger: "    + this.getHunger()     +
-					   "\nHappiness: " + this.getHappiness();
+		String Stats = "\nName: "      + ConsoleColors.PURPLE + this.getName()       + ConsoleColors.RESET +
+					   "\nType: "      + ConsoleColors.CYAN   + this.getType()       + ConsoleColors.RESET +
+					   "\nAge: "       + ConsoleColors.RED    + this.getAge()        + ConsoleColors.RESET +
+					   "\nHunger: "    + ConsoleColors.RED    + this.getHunger()     + ConsoleColors.RESET +
+					   "\nHappiness: " + ConsoleColors.RED    + this.getHappiness()  + ConsoleColors.RESET;
 		return(Stats);
 	}
 }
