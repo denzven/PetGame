@@ -13,13 +13,31 @@ javac *.java && java PetGame
 
 this will compile the program using javac (JAVA Compiler) and run the compiled class file using JAVA
 
-or you could use some kind of Online Java compiler 🤷
+
+ScreenShots:
+Yes this program is very colorful and uses ANSI colors for the terminal
+Thanks to [This answer on StackOverFlow](https://stackoverflow.com/a/45444716)
+
+Windows Terminal:  
+
+![WindowsTerminalScreenShot]()  
+
+Termux (Android):  
+
+![TermuxAndroidScreenShot]()  
+
+
+for running the code, you could use some kind of Online Java compiler too... 🤷
 eg..  
 
 https://www.onlinegdb.com/online_java_compiler  
 https://www.programiz.com/java-programming/online-compiler/  
 
+
 or jus a simple ~~Google~~ DDG search...  
 https://duckduckgo.com/?q=java+compiler+online
 
-Thank you! pls star the repo [⭐](https://github.com/denzven/PetGame)
+Thank you! pls star the repo [⭐](https://github.com/denzven/PetGame)    
+
+
+Made with Love 💜 by Denzven and Java 🍵  
