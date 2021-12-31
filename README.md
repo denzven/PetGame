@@ -7,7 +7,7 @@ Ofc I was inspired by numerous apps and programs i have seen in the past includi
 to run the program, have the JDK (Java Development Kit) installed and put in PATH, and run the following command ->  
 
 ```bash
-javac PetGame.java && java PetGame
+javac *.java && java PetGame
 ```  
 [Download the JDK here](https://www.oracle.com/java/technologies/java-se-development-kit11-downloads.html)
 
