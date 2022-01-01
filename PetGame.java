@@ -14,7 +14,7 @@ public class PetGame{
 
 		//Default objects of Pet and player
 		Pet Pet = new Pet("DEFUALT_PET","DEFAULT_TYPE",0,100,100);
-		Player Player = new Player("DEFUALT_PLAYER",0,0,false,false,Pet);
+		Player Player = new Player("DEFUALT_PLAYER",0,0,0,false,false,Pet);
 
 		//PlayerInput
 		Scanner sc = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class PetGame{
 		if (Player.HasSetName == false){
 			System.out.println(ConsoleColors.GREEN + "Enter your Name: " + ConsoleColors.RESET);
 			String Name = sc.next();
-			Player = new Player(Name,0,0,false,false,Pet);
+			Player = new Player(Name,0,0,0,false,false,Pet);
 			System.out.println(ConsoleColors.GREEN + Player.Name + ConsoleColors.RESET +", good to see you here!");
 			}
 
@@ -67,6 +67,10 @@ public class PetGame{
 			//Counts the Number of Commands and gets the Age of Pet with it
 			Player.NumberOfCommands = Player.NumberOfCommands + 1;
 			if(Player.NumberOfCommands % 20 == 0){Player.Pet.Age++;}
+			if(Player.XpPoints % 100 == 0){
+				Player.Level++;
+				Player.XpPoints = 1;
+			}
 
 			// Switch for the commands
 			switch (Input.toLowerCase()) {

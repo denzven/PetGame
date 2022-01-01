@@ -33,7 +33,9 @@ public class Pet{
 					   "\nType: "      + ConsoleColors.CYAN   + this.getType()       + ConsoleColors.RESET +
 					   "\nAge: "       + ConsoleColors.RED    + this.getAge()        + ConsoleColors.RESET +
 					   "\nHunger: "    + ConsoleColors.RED    + this.getHunger()     + ConsoleColors.RESET +
-					   "\nHappiness: " + ConsoleColors.RED    + this.getHappiness()  + ConsoleColors.RESET;
+					   LoadingAnim.Bar(this.getHunger()) +
+					   "\nHappiness: " + ConsoleColors.RED    + this.getHappiness()  + ConsoleColors.RESET +
+					   LoadingAnim.Bar(this.getHappiness());
 		return(Stats);
 	}
 }
