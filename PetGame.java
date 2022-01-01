@@ -13,8 +13,9 @@ public class PetGame{
 		System.out.println(ConsoleColors.CYAN + "Welcome to PetGame by Denzven! \n This game is made in java and is a starter project of mine! \n Hope you love it!\n\n" + ConsoleColors.RESET);
 
 		//Default objects of Pet and player
+		List<Pet> PetList = new ArrayList<>();
 		Pet Pet = new Pet("DEFUALT_PET","DEFAULT_TYPE",0,100,100);
-		Player Player = new Player("DEFUALT_PLAYER",0,0,0,false,false,Pet);
+		Player Player = new Player("DEFUALT_PLAYER",0,0,0,false,false,PetList,Pet);
 
 		//PlayerInput
 		Scanner sc = new Scanner(System.in);
@@ -22,32 +23,27 @@ public class PetGame{
 		// Setting Player Name
 		if (Player.HasSetName == false){
 			System.out.println(ConsoleColors.GREEN + "Enter your Name: " + ConsoleColors.RESET);
-			String Name = sc.next();
-			Player = new Player(Name,0,0,0,false,false,Pet);
+			String Name = sc.nextLine();
+			Player = new Player(Name,0,0,0,false,false,PetList,Pet);
 			System.out.println(ConsoleColors.GREEN + Player.Name + ConsoleColors.RESET +", good to see you here!");
+			Player.HasSetName = true;
 			}
 
 		// Adopting a Pet
 		if (Player.HasPet == false){
-			System.out.println("You dont have a Pet, Do you want to buy one? "+ ConsoleColors.RED + "[Type 1 for yes]" + ConsoleColors.RESET);
-			int InputPet = sc.nextInt();
 
-			if(InputPet == 1){
-				System.out.println("What do you want to Name your New Pet? " + ConsoleColors.RED + "[Type Name of your Pet]" + ConsoleColors.RESET);
-				String PetName = sc.next();
+			System.out.println("What do you want to Name your New Pet? " + ConsoleColors.RED + "[Type Name of your Pet]" + ConsoleColors.RESET);
+			String PetName = sc.nextLine();
+	
+			System.out.println("What type of Pet do you want " + ConsoleColors.YELLOW + PetName  + ConsoleColors.RESET + " to be?");
+			String PlayerPetType = sc.nextLine();
 
-				System.out.println("What type of Pet do you want " + ConsoleColors.YELLOW + PetName  + ConsoleColors.RESET + " to be?");
-				String PlayerPetType = sc.next();
-
-				Pet = new Pet(PetName,PlayerPetType,0,100,100);
-				Player.Pet = Pet;
-				Player.HasPet = true;
-				System.out.println(ConsoleColors.GREEN + Player.Name + ConsoleColors.RESET + ", you are all set and ready! take good care of your " + Player.Pet.Type + " ," + ConsoleColors.PURPLE + Player.Pet.Name + ConsoleColors.RESET + ConsoleColors.RESET + "! ");
-			} else {
-				System.out.println(ConsoleColors.RED + "Error" + ConsoleColors.RESET);
-				System.exit(0);
+			Pet = new Pet(PetName,PlayerPetType,0,100,100);
+			Player.Pet = Pet;
+			Player.PetList.add(Pet);
+			Player.HasPet = true;
+			System.out.println(ConsoleColors.GREEN + Player.Name + ConsoleColors.RESET + ", you are all set and ready! take good care of your " + Player.Pet.Type + " ," + ConsoleColors.PURPLE + Player.Pet.Name + ConsoleColors.RESET + ConsoleColors.RESET + "! ");
 			}
-		}
 
 
 		//Main while loop
@@ -58,17 +54,26 @@ public class PetGame{
 							   ConsoleColors.CYAN + "3" + ConsoleColors.YELLOW + " [play]"     + ConsoleColors.RESET + " | " +
 							   ConsoleColors.CYAN + "4" + ConsoleColors.YELLOW + " [sleep]"    + ConsoleColors.RESET + " | " +
 							   ConsoleColors.CYAN + "5" + ConsoleColors.YELLOW + " [chngname]" + ConsoleColors.RESET + " | " +
+							   ConsoleColors.CYAN + "6" + ConsoleColors.YELLOW + " [NewPet]" + ConsoleColors.RESET + " | " +
+							   ConsoleColors.CYAN + "7" + ConsoleColors.YELLOW + " [chngPet]" + ConsoleColors.RESET + " | " +
 							   ConsoleColors.CYAN + "0" + ConsoleColors.YELLOW + " [help]"     + ConsoleColors.RESET + " | " +
 							   ConsoleColors.CYAN + "x" + ConsoleColors.RED    + " [exit]"     + ConsoleColors.RESET + " | " +
 							   ConsoleColors.RESET);
 
-			String Input = sc.next();
+			String Input = sc.nextLine();
 
 			//Counts the Number of Commands and gets the Age of Pet with it
 			Player.NumberOfCommands = Player.NumberOfCommands + 1;
 			if(Player.NumberOfCommands % 20 == 0){Player.Pet.Age++;}
 			if(Player.XpPoints % 100 == 0){
 				Player.Level++;
+				Player.XpPoints = 1;
+			}
+			if(Player.XpPoints > 100){
+				Player.Level++;
+				Player.XpPoints = Player.XpPoints - 100;
+			}
+			if(Player.XpPoints < 0){
 				Player.XpPoints = 1;
 			}
 
@@ -170,6 +175,35 @@ public class PetGame{
 					Player.Pet.Name = PetName;
 					System.out.println("Your Pet is now named: " + Player.Pet.Name);
 
+					break;
+
+				case "Newpet":
+				case "6":
+					System.out.println("What do you want to Name your New Pet? " + ConsoleColors.RED + "[Type Name of your Pet]" + ConsoleColors.RESET);
+					String NewPetName = sc.next();
+	
+					System.out.println("What type of Pet do you want " + ConsoleColors.YELLOW + NewPetName  + ConsoleColors.RESET + " to be?");
+					String NewPlayerPetType = sc.next();
+	
+					Pet = new Pet(NewPetName,NewPlayerPetType,0,100,100);
+					Player.Pet = Pet;
+					Player.PetList.add(Pet);
+					Player.HasPet = true;
+					System.out.println(ConsoleColors.GREEN + Player.Name + ConsoleColors.RESET + ", you are all set and ready! take good care of your " + Player.Pet.Type + " ," + ConsoleColors.PURPLE + Player.Pet.Name + ConsoleColors.RESET + ConsoleColors.RESET + "! ");
+					System.out.println("this is your " + Player.PetList.size() + " pet!");
+					break;
+
+				case "ChngPet":
+				case "7":
+					System.out.println("Which Pet do you want to take care of?");
+					for (int i = 0; i < Player.PetList.size(); i++) {
+						Pet =  Player.PetList.get(i);
+						System.out.println("[" + i + "] " + Pet.Name);
+					}
+
+					int PlayerInput = sc.nextInt();
+					Player.Pet = Player.PetList.get(PlayerInput);
+					System.out.println("you are now taking care of " + Player.Pet.Name);
 					break;
 
 				case "help":

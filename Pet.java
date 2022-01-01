@@ -1,3 +1,5 @@
+import java.util.*;
+
 // Class of Pet
 public class Pet{
 	String Name;   //Name of the Pet
@@ -32,10 +34,8 @@ public class Pet{
 		String Stats = "\nName: "      + ConsoleColors.PURPLE + this.getName()       + ConsoleColors.RESET +
 					   "\nType: "      + ConsoleColors.CYAN   + this.getType()       + ConsoleColors.RESET +
 					   "\nAge: "       + ConsoleColors.RED    + this.getAge()        + ConsoleColors.RESET +
-					   "\nHunger: "    + ConsoleColors.RED    + this.getHunger()     + ConsoleColors.RESET +
-					   LoadingAnim.Bar(this.getHunger()) +
-					   "\nHappiness: " + ConsoleColors.RED    + this.getHappiness()  + ConsoleColors.RESET +
-					   LoadingAnim.Bar(this.getHappiness());
+					   "\nHunger: "    + LoadingAnim.Bar(this.getHunger())           +
+					   "\nHappiness: " + LoadingAnim.Bar(this.getHappiness());
 		return(Stats);
 	}
 }
