@@ -3,6 +3,7 @@ import java.util.*;
 // Class of Player
 public class Player{
 	String Name;         // Name of User
+	String Passwd;
 	int XpPoints;        // XpPoints of User
 	int Level;           // Level of User
 	int NumberOfCommands;// NumberOfCommands of User
@@ -13,6 +14,7 @@ public class Player{
 
 	public Player(
 			String Name,
+			String Passwd,
 			int XpPoints,
 			int Level,
 			int NumberOfCommands,
@@ -22,6 +24,7 @@ public class Player{
 			Pet Pet
 		     ){
 				this.Name = Name;                         //Name of the Player
+				this.Passwd = Passwd;                     //Passwd of the Player
 				this.XpPoints = XpPoints;                 //XpPoints of Player
 				this.Level = Level;                       //Level of Player
 				this.NumberOfCommands = NumberOfCommands; //NumberOfCommands of Player
@@ -33,6 +36,7 @@ public class Player{
 
 	// Methods to get all variables in Class
 	public String    getName()             {return Name;}
+	public String    getPasswd()           {return Passwd;}
 	public int       getXpPoints()         {return XpPoints;}
 	public int       getLevel()            {return Level;}
 	public int       getNumberOfCommands() {return NumberOfCommands;}
@@ -44,28 +48,14 @@ public class Player{
 
 	// Method for Getting Stats
 	public String getStats(){
-		String PlayerStats = "\nPlayerName: "       + ConsoleColors.GREEN  + this.getName()             + ConsoleColors.RESET +
+		return("\nPlayerName: "       + ConsoleColors.GREEN  + this.getName()             + ConsoleColors.RESET +
 			                 "\nXpPoints: "         + this.getXpPoints() + LoadingAnim.Bar(this.getXpPoints())               +
 			                 "\nLevel: "            + ConsoleColors.RED    + this.getLevel()            + ConsoleColors.RESET +
 			                 "\nNumberOfCommands: " + ConsoleColors.RED    + this.getNumberOfCommands() + ConsoleColors.RESET +
 			                 "\nHasPet: "           + ConsoleColors.RED    + this.getHasPet()           + ConsoleColors.RESET +
 			                 "\nHasSetName: "       + ConsoleColors.RED    + this.getHasSetName()       + ConsoleColors.RESET +
 			                 "\nPetList: "          + ConsoleColors.RED    + this.getPetList()          + ConsoleColors.RESET +
-			                 "\nPlayerPet: "        + ConsoleColors.PURPLE + this.getPet()              + ConsoleColors.RESET;
-		return(PlayerStats);
-	}
-
-	// Method for Getting Stats
-	public String getPetTable(){
-		String PlayerStats = "\nPlayerName: "       + ConsoleColors.GREEN  + this.getName()             + ConsoleColors.RESET +
-			                 "\nXpPoints: "         + LoadingAnim.Bar(this.getXpPoints())               +
-			                 "\nLevel: "            + ConsoleColors.RED    + this.getLevel()            + ConsoleColors.RESET +
-			                 "\nNumberOfCommands: " + ConsoleColors.RED    + this.getNumberOfCommands() + ConsoleColors.RESET +
-			                 "\nHasPet: "           + ConsoleColors.RED    + this.getHasPet()           + ConsoleColors.RESET +
-			                 "\nHasSetName: "       + ConsoleColors.RED    + this.getHasSetName()       + ConsoleColors.RESET +
-			                 "\nPetList: "          + ConsoleColors.RED    + this.getPetList()          + ConsoleColors.RESET +
-			                 "\nPlayerPet: "        + ConsoleColors.PURPLE + this.getPet()              + ConsoleColors.RESET;
-		return(PlayerStats);
+			                 "\nPlayerPet: "        + ConsoleColors.PURPLE + this.getPet()              + ConsoleColors.RESET);
 	}
 
 }
