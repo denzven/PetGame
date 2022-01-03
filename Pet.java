@@ -1,5 +1,7 @@
+import java.io.*;
+
 // Class of Pet
-public class Pet{
+public class Pet implements Serializable{
 	String Name;   //Name of the Pet
 	String Type;   //Type of pet
 	int Age;       //Age of Pet

@@ -1,7 +1,8 @@
 import java.util.*;
+import java.io.*;
 
 // Class of Player
-public class Player{
+public class Player implements Serializable{
 	String Name;         // Name of User
 	String Passwd;
 	int XpPoints;        // XpPoints of User

@@ -65,6 +65,7 @@ public class PetGame{
 							   ConsoleColors.CYAN + "9" + ConsoleColors.YELLOW + " [newplayer]"   + ConsoleColors.RESET + " | " +
 							   ConsoleColors.CYAN + "10" + ConsoleColors.YELLOW + " [chngplayer]"  + ConsoleColors.RESET + " | " +
 
+							   ConsoleColors.CYAN + "s" + ConsoleColors.YELLOW + " [save]"     + ConsoleColors.RESET + " | " +
 							   ConsoleColors.CYAN + "0" + ConsoleColors.YELLOW + " [help]"     + ConsoleColors.RESET + " | " +
 							   ConsoleColors.CYAN + "x" + ConsoleColors.RED    + " [exit]"     + ConsoleColors.RESET + " | " +
 							   ConsoleColors.RESET);
@@ -249,6 +250,22 @@ public class PetGame{
 					PlayerInput = sc.nextInt();
 					Player = Game.PlayerList.get(PlayerInput);
 					System.out.println("you are now " + Player.Name);
+					break;
+
+
+
+				case "save":
+				case "s":
+					Game.Save();
+
+					break;
+
+				case "load":
+				case "l":
+					Game.Load();
+					//Game = Game.Load();
+					Game = new Game(Game.Load());
+
 					break;
 
 				case "help":
