@@ -28,16 +28,16 @@ public class PetGame{
 		 * @param None
 		 */ 
 
-		//Intro String
-		System.out.println(ConsoleColors.CYAN + "Welcome to PetGame by Denzven! \n This game is made in java and is a starter project of mine! \n Hope you love it!\n\n" + ConsoleColors.RESET);
-
 		//Default objects of Pet and player
 		List<Pet> PetList = new ArrayList<>();
 		List<Player> PlayerList = new ArrayList<>();
 		Pet Pet = new Pet("DEFAULT_PET","DEFAULT_TYPE",0,100,100);
 		Player Player = new Player("DEFAULT_PLAYER","DEFAULT_PASSWD",0,0,0,false,false,PetList,Pet);
 		Game Game = new Game(PlayerList);
-
+		
+		//Intro String
+		String GameIntro = Game.getIntro();
+		System.out.println(GameIntro);
 
 		//Main while loop
 		while(true){

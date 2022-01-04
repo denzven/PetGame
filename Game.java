@@ -5,6 +5,7 @@ import java.io.*;
 public class Game implements Serializable {
     private static final long serialVersionUID = 4L;
     List<Player> PlayerList;
+    String GameIntro;
     public Game(
             List<Player> PlayerList
     ){
@@ -37,6 +38,15 @@ public class Game implements Serializable {
             e.printStackTrace();
             return "error";
         } 
+    }
+    public String getIntro(){
+GameIntro = ConsoleColors.GREEN +
+" ___       _     ___                   \n"+
+"| _ \\ ___ | |_  / __| __ _  _ __   ___ \n"+
+"|  _// -_)|  _|| (_ |/ _` || '  \\ / -_)\n"+
+"|_|  \\___| \\__| \\___|\\__/_||_|_|_|\\___|\n"+
+ConsoleColors.RESET + ConsoleColors.CYAN + "Welcome to PetGame by Denzven! \n This game is made in java and is a starter project of mine! \n Hope you love it!\n\n" + ConsoleColors.RESET;
+        return GameIntro;
     }
 }
 
