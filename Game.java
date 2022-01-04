@@ -4,35 +4,35 @@ import java.io.*;
 //Class of Game
 public class Game implements Serializable {
     private static final long serialVersionUID = 4L;
-    List<Player> PlayerList;
-    String GameIntro;
+    List<Player> playerList;
+    String gameIntro;
     public Game(
-            List<Player> PlayerList
+            List<Player> playerList
     ){
-        this.PlayerList = PlayerList; // PlayerList of the Game
+        this.playerList = playerList; // PlayerList of the Game
     }
 
-    public List<Player> getPlayerList()  {return PlayerList;}
+    public List<Player> getPlayerList()  {return playerList;}
 
     public String getStats(){
-        return ("\nPlayerList: "       + ConsoleColors.GREEN  + this.getPlayerList()      + ConsoleColors.RESET);
+        return ("\nplayerList: "       + ConsoleColors.GREEN  + this.getPlayerList()      + ConsoleColors.RESET);
     }
 
-    public String Save(String SavedGameFile){
+    public String Save(String savedGameFile){
         try {
-            FileOutputStream SavedGame = new FileOutputStream(SavedGameFile);    
-            ObjectOutputStream out = new ObjectOutputStream(SavedGame);    
-            out.writeObject(this);
-            for (int i = 0; i < this.PlayerList.size(); i++) {
-                        out.writeObject(this.PlayerList.get(i));
-                        for (int j = 0; j < this.PlayerList.get(i).PetList.size();j++ ) {
-                            out.writeObject(this.PlayerList.get(i).PetList.get(j));
+            FileOutputStream savedGame = new FileOutputStream(savedGameFile);    
+            ObjectOutputStream outPutGame = new ObjectOutputStream(savedGame);    
+            outPutGame.writeObject(this);
+            for (int i = 0; i < this.playerList.size(); i++) {
+                        outPutGame.writeObject(this.playerList.get(i));
+                        for (int j = 0; j < this.playerList.get(i).petList.size();j++ ) {
+                            outPutGame.writeObject(this.playerList.get(i).petList.get(j));
                         }
                     }    
-            out.flush();      
-            out.close();      
-            System.out.println("Successfully Saved the Game to " + SavedGameFile);
-            return SavedGameFile;
+            outPutGame.flush();      
+            outPutGame.close();      
+            System.out.println("Successfully Saved the Game to " + savedGameFile);
+            return savedGameFile;
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -40,13 +40,13 @@ public class Game implements Serializable {
         } 
     }
     public String getIntro(){
-GameIntro = ConsoleColors.GREEN +
+gameIntro = ConsoleColors.GREEN +
 " ___       _     ___                   \n"+
 "| _ \\ ___ | |_  / __| __ _  _ __   ___ \n"+
 "|  _// -_)|  _|| (_ |/ _` || '  \\ / -_)\n"+
 "|_|  \\___| \\__| \\___|\\__/_||_|_|_|\\___|\n"+
 ConsoleColors.RESET + ConsoleColors.CYAN + "Welcome to PetGame by Denzven! \n This game is made in java and is a starter project of mine! \n Hope you love it!\n\n" + ConsoleColors.RESET;
-        return GameIntro;
+        return gameIntro;
     }
 }
 

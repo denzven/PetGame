@@ -2,21 +2,21 @@
 
 // Main Game class
 public class LoadingAnim{
-	int InputLevel;
+	int inputLevel;
 	public static String Bar(
-		int InputLevel
+		int inputLevel
 	){
-		     if(InputLevel <=100 && InputLevel > 90){return ConsoleColors.GREEN  + "[====================]" + ConsoleColors.RESET + " " +InputLevel + "%";}
-		else if(InputLevel <= 90 && InputLevel > 80){return ConsoleColors.GREEN  + "[==================--]" + ConsoleColors.RESET + " " +InputLevel + "%";}
-		else if(InputLevel <= 80 && InputLevel > 70){return ConsoleColors.GREEN  + "[================----]" + ConsoleColors.RESET + " " +InputLevel + "%";}
-		else if(InputLevel <= 70 && InputLevel > 60){return ConsoleColors.YELLOW + "[==============------]" + ConsoleColors.RESET + " " +InputLevel + "%";}
-		else if(InputLevel <= 60 && InputLevel > 50){return ConsoleColors.YELLOW + "[============--------]" + ConsoleColors.RESET + " " +InputLevel + "%";}
-		else if(InputLevel <= 50 && InputLevel > 40){return ConsoleColors.YELLOW + "[==========----------]" + ConsoleColors.RESET + " " +InputLevel + "%";}
-		else if(InputLevel <= 40 && InputLevel > 30){return ConsoleColors.RED    + "[========------------]" + ConsoleColors.RESET + " " +InputLevel + "%";}
-		else if(InputLevel <= 30 && InputLevel > 20){return ConsoleColors.RED    + "[======--------------]" + ConsoleColors.RESET + " " +InputLevel + "%";}
-		else if(InputLevel <= 20 && InputLevel > 10){return ConsoleColors.RED    + "[====----------------]" + ConsoleColors.RESET + " " +InputLevel + "%";}
-		else if(InputLevel <= 10 && InputLevel > 0 ){return ConsoleColors.RED    + "[==------------------]" + ConsoleColors.RESET + " " +InputLevel + "%";}
-		else if(InputLevel == 0)                    {return ConsoleColors.RED    + "[--------------------]" + ConsoleColors.RESET + " " +InputLevel + "%";}
+		     if(inputLevel <=100 && inputLevel > 90){return ConsoleColors.GREEN  + "[====================]" + ConsoleColors.RESET + " " +inputLevel + "%";}
+		else if(inputLevel <= 90 && inputLevel > 80){return ConsoleColors.GREEN  + "[==================--]" + ConsoleColors.RESET + " " +inputLevel + "%";}
+		else if(inputLevel <= 80 && inputLevel > 70){return ConsoleColors.GREEN  + "[================----]" + ConsoleColors.RESET + " " +inputLevel + "%";}
+		else if(inputLevel <= 70 && inputLevel > 60){return ConsoleColors.YELLOW + "[==============------]" + ConsoleColors.RESET + " " +inputLevel + "%";}
+		else if(inputLevel <= 60 && inputLevel > 50){return ConsoleColors.YELLOW + "[============--------]" + ConsoleColors.RESET + " " +inputLevel + "%";}
+		else if(inputLevel <= 50 && inputLevel > 40){return ConsoleColors.YELLOW + "[==========----------]" + ConsoleColors.RESET + " " +inputLevel + "%";}
+		else if(inputLevel <= 40 && inputLevel > 30){return ConsoleColors.RED    + "[========------------]" + ConsoleColors.RESET + " " +inputLevel + "%";}
+		else if(inputLevel <= 30 && inputLevel > 20){return ConsoleColors.RED    + "[======--------------]" + ConsoleColors.RESET + " " +inputLevel + "%";}
+		else if(inputLevel <= 20 && inputLevel > 10){return ConsoleColors.RED    + "[====----------------]" + ConsoleColors.RESET + " " +inputLevel + "%";}
+		else if(inputLevel <= 10 && inputLevel > 0 ){return ConsoleColors.RED    + "[==------------------]" + ConsoleColors.RESET + " " +inputLevel + "%";}
+		else if(inputLevel == 0)                    {return ConsoleColors.RED    + "[--------------------]" + ConsoleColors.RESET + " " +inputLevel + "%";}
 		else{return "Error Ocurred";}
 	}
 }

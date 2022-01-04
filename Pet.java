@@ -3,39 +3,39 @@ import java.io.*;
 // Class of Pet
 public class Pet implements Serializable{
 	private static final long serialVersionUID = 4L;
-	String Name;   //Name of the Pet
-	String Type;   //Type of pet
-	int Age;       //Age of Pet
-	int Hunger;    //Hunger lvl of Pet
-	int Happiness; //Happiness lvl of Pet
+	String name;   //Name of the Pet
+	String type;   //Type of pet
+	int age;       //Age of Pet
+	int hunger;    //Hunger lvl of Pet
+	int happiness; //Happiness lvl of Pet
 
 	public Pet(
-			String Name,
-			String Type,
-			int Age,
-			int Hunger,
-			int Happiness
+			String name,
+			String type,
+			int age,
+			int hunger,
+			int happiness
 		  ){
-			this.Name = Name;           //Name of the Pet
-			this.Type = Type;           //Type of pet
-			this.Age = Age;             // Age of Pet
-			this.Hunger = Hunger;       //Hunger lvl of Pet
-			this.Happiness = Happiness; //Happiness lvl of Pet
+			this.name = name;           //Name of the Pet
+			this.type = type;           //Type of pet
+			this.age = age;             // Age of Pet
+			this.hunger = hunger;       //Hunger lvl of Pet
+			this.happiness = happiness; //Happiness lvl of Pet
 		  }
 
 	// Methods to get all variables in Class
-	public String getName()     {return Name;}
-	public String getType()     {return Type;}
-	public int    getAge()      {return Age;}
-	public int    getHunger()   {return Hunger;}
-	public int    getHappiness(){return Happiness;}
+	public String getName()     {return name;}
+	public String getType()     {return type;}
+	public int    getAge()      {return age;}
+	public int    getHunger()   {return hunger;}
+	public int    getHappiness(){return happiness;}
 
 	// Method for Getting Stats
 	public String getStats(){
-		return("\nName: "      + ConsoleColors.PURPLE + this.getName()       + ConsoleColors.RESET +
-					   "\nType: "      + ConsoleColors.CYAN   + this.getType()       + ConsoleColors.RESET +
-					   "\nAge: "       + ConsoleColors.RED    + this.getAge()        + ConsoleColors.RESET +
-					   "\nHunger: "    + LoadingAnim.Bar(this.getHunger())           +
-					   "\nHappiness: " + LoadingAnim.Bar(this.getHappiness()));
+		return("\nname: "      + ConsoleColors.PURPLE + this.getName()       + ConsoleColors.RESET +
+					   "\ntype: "      + ConsoleColors.CYAN   + this.getType()       + ConsoleColors.RESET +
+					   "\nage: "       + ConsoleColors.RED    + this.getAge()        + ConsoleColors.RESET +
+					   "\nhunger: "    + LoadingAnim.Bar(this.getHunger())           +
+					   "\nhappiness: " + LoadingAnim.Bar(this.getHappiness()));
 	}
 }

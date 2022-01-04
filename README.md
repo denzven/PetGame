@@ -26,9 +26,8 @@ Windows Terminal:
 
 
 Termux (Android):  
-
-![TermuxAndroidScreenShot](https://github.com/denzven/PetGame/blob/main/TermuxAdroidScreenShot?raw=true)  
-
+  
+<img src="https://github.com/denzven/PetGame/blob/main/TermuxAdroidScreenShot?raw=true" alt="TermuxAndroidScreenShot" width="200">
 
 for running the code, you could use some kind of Online Java compiler too... 🤷
 eg..  
