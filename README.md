@@ -31,7 +31,7 @@ Termux (Android):
 
 Or try this Online verion!
 
-https://replit.com/@DenzvenIgnatius/PetGame
+https://replit.com/@DenzvenIgnatius/PetGame?v=1
 
 
 Thank you! pls star the repo [⭐](https://github.com/denzven/PetGame)    
