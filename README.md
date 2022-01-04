@@ -29,6 +29,8 @@ Termux (Android):
   
 <img src="https://github.com/denzven/PetGame/blob/main/TermuxAdroidScreenShot?raw=true" alt="TermuxAndroidScreenShot" width="200">
 
+<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@DenzvenIgnatius/PetGame?embed=true"></iframe>
+
 for running the code, you could use some kind of Online Java compiler too... 🤷
 eg..  
 
