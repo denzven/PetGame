@@ -3,6 +3,7 @@ import java.io.*;
 
 //Class of Game
 public class Game implements Serializable {
+    private static final long serialVersionUID = 4L;
     List<Player> PlayerList;
     public Game(
             List<Player> PlayerList
@@ -16,19 +17,18 @@ public class Game implements Serializable {
         return ("\nPlayerList: "       + ConsoleColors.GREEN  + this.getPlayerList()      + ConsoleColors.RESET);
     }
 
-    public String Save(){
+    public String Save(String SavedGameFile){
         try {
-             String SavedGameFile = "SavedGame.txt";
-            // FileWriter SavedGame = new FileWriter(SavedGameFile);
-            // SavedGame.write("Game is Saved to this file");
-            // // any better way?
-            // SavedGame.close();
-
             FileOutputStream SavedGame = new FileOutputStream(SavedGameFile);    
             ObjectOutputStream out = new ObjectOutputStream(SavedGame);    
-            out.writeObject(this);    
-            out.flush();    
-            //closing the stream    
+            out.writeObject(this);
+            for (int i = 0; i < this.PlayerList.size(); i++) {
+                        out.writeObject(this.PlayerList.get(i));
+                        for (int j = 0; j < this.PlayerList.get(i).PetList.size();j++ ) {
+                            out.writeObject(this.PlayerList.get(i).PetList.get(j));
+                        }
+                    }    
+            out.flush();      
             out.close();      
             System.out.println("Successfully Saved the Game to " + SavedGameFile);
             return SavedGameFile;
@@ -37,21 +37,6 @@ public class Game implements Serializable {
             e.printStackTrace();
             return "error";
         } 
-    }
-    public List Load(){
-        try{
-            String SavedGameFile = "SavedGame.txt";  
-            //Creating stream to read the object  
-            ObjectInputStream in = new ObjectInputStream(new FileInputStream(SavedGameFile));  
-            Game Game=(Game)in.readObject();
-            System.out.println(Game.PlayerList.get(0).getName());   
-            //closing the stream 
-            //in.close();  
-            return Game.PlayerList; 
-        }catch(Exception e){
-            System.out.println(e);
-            return null;
-        }  
     }
 }
 

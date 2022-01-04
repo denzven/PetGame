@@ -2,6 +2,7 @@ import java.io.*;
 
 // Class of Pet
 public class Pet implements Serializable{
+	private static final long serialVersionUID = 4L;
 	String Name;   //Name of the Pet
 	String Type;   //Type of pet
 	int Age;       //Age of Pet

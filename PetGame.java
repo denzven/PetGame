@@ -1,12 +1,32 @@
-// PetGame.java
 /**
  * @author Denzven
+ * Welcome to PetGame.java! a simple and cute game made in java by Denzven
+ * in this small game you can adopt pets and take car of them and gain XpPoints
+ * this is inspired by tamacotchi and dank memer pet system
+ * since java is Object Oriented Programming Language
+ * this game can create almost infinte Pet Objects and Player Objects too
+ * Have fun
+ * 
+ * Please do Star the repo on Github
+ * {@link https://github.com/denzven/PetGame }
  */
 import java.util.*;
+import java.io.*;
+
 
 // Main Game class
 public class PetGame{
+	private static final long serialVersionUID = 4L;
+	/**
+	 * This is the Main class of the PetGame,
+	 * this includes the main "while loop" and all input fields like player name,
+	 * pet name, etc.
+	 */
 	public static void main(String[] args) {
+		/**
+		 * Main function of PetGame
+		 * @param None
+		 */ 
 
 		//Intro String
 		System.out.println(ConsoleColors.CYAN + "Welcome to PetGame by Denzven! \n This game is made in java and is a starter project of mine! \n Hope you love it!\n\n" + ConsoleColors.RESET);
@@ -21,6 +41,10 @@ public class PetGame{
 
 		//Main while loop
 		while(true){
+			/**
+			 * Main while loop that keeps the game going.
+			 */
+
 			//PlayerInput
 			Scanner sc = new Scanner(System.in);
 
@@ -53,6 +77,7 @@ public class PetGame{
 				System.out.println(ConsoleColors.GREEN + Player.Name + ConsoleColors.RESET + ", you are all set and ready! take good care of your " + Player.Pet.Type + " ," + ConsoleColors.PURPLE + Player.Pet.Name + ConsoleColors.RESET + ConsoleColors.RESET + "! ");
 			}
 
+			// Entering cmd:
 			System.out.println("Enter cmd: ");
 			System.out.println(ConsoleColors.CYAN + "1" + ConsoleColors.YELLOW + " [stats]"    + ConsoleColors.RESET + " | " +
 							   ConsoleColors.CYAN + "2" + ConsoleColors.YELLOW + " [feed]"     + ConsoleColors.RESET + " | " +
@@ -66,6 +91,7 @@ public class PetGame{
 							   ConsoleColors.CYAN + "10" + ConsoleColors.YELLOW + " [chngplayer]"  + ConsoleColors.RESET + " | " +
 
 							   ConsoleColors.CYAN + "s" + ConsoleColors.YELLOW + " [save]"     + ConsoleColors.RESET + " | " +
+							   ConsoleColors.CYAN + "l" + ConsoleColors.YELLOW + " [load]"     + ConsoleColors.RESET + " | " +
 							   ConsoleColors.CYAN + "0" + ConsoleColors.YELLOW + " [help]"     + ConsoleColors.RESET + " | " +
 							   ConsoleColors.CYAN + "x" + ConsoleColors.RED    + " [exit]"     + ConsoleColors.RESET + " | " +
 							   ConsoleColors.RESET);
@@ -89,10 +115,20 @@ public class PetGame{
 
 			// Switch for the commands
 			switch (Input.toLowerCase()) {
+				/**
+				 * Switch case style of input,
+				 * to evaluate the action by Player.
+				 */
 
-				// Stats of User and Player
 				case "stats":
 				case "1":
+				/**
+				 * Stats of Pet,Player and Game Classes,
+				 * this includes info like:
+				 * 1. How many Pets does the Player have.
+				 * 2. How many Players are there in the Game.
+				 * 3. Name and other info of the pet and player.
+				 */
 					System.out.println(ConsoleColors.CYAN + "Getting Pet & Player stats...\n" + ConsoleColors.RESET);
 					System.out.println(Player.Pet.getStats());
 					System.out.println(Player.getStats());
@@ -101,9 +137,13 @@ public class PetGame{
 
 					break;
 
-				// Feed Command
 				case "feed":
 				case "2":
+				/**
+				 * Feed command for the Pet,
+				 * This command increases the Hunger Stat of the Pet "dynamically",
+				 * and grants the player 10 XpPoints.
+				 */
 					System.out.println("You fed "+ ConsoleColors.PURPLE + Player.Pet.Name + ConsoleColors.RESET + " some tasty food");
 
 					// Range of Values for getting behaviour
@@ -128,13 +168,14 @@ public class PetGame{
 						System.out.println("Error Occurred");
 					}
 
-					//Xp points
 					Player.XpPoints = Player.XpPoints + 10;
 					break;
 
-				//Play Command
 				case "play":
 				case "3":
+				/**
+				 * 
+				 */
 					System.out.println("You played catch with " + Player.Pet.Name);
 
 					// Range of Values for getting behaviour
@@ -162,8 +203,6 @@ public class PetGame{
 						System.out.println("Error Occurred");
 					}
 
-
-					//Xp points
 					Player.XpPoints = Player.XpPoints + 10;
 
 					break;
@@ -182,7 +221,7 @@ public class PetGame{
 				case "chngpetname":
 				case "5":
 					System.out.println("Enter the new name of your Pet: ");
-					Player.Pet.Name = sc.next();
+					Player.Pet.Name = sc.nextLine();
 					System.out.println("Your Pet is now named: " + Player.Pet.Name);
 
 					break;
@@ -190,10 +229,10 @@ public class PetGame{
 				case "newpet":
 				case "6":
 					System.out.println("What do you want to Name your New Pet? " + ConsoleColors.RED + "[Type Name of your Pet]" + ConsoleColors.RESET);
-					String NewPetName = sc.next();
+					String NewPetName = sc.nextLine();
 
 					System.out.println("What type of Pet do you want " + ConsoleColors.YELLOW + NewPetName  + ConsoleColors.RESET + " to be?");
-					String NewPlayerPetType = sc.next();
+					String NewPlayerPetType = sc.nextLine();
 
 					Pet = new Pet(NewPetName,NewPlayerPetType,0,100,100);
 					Player.Pet = Pet;
@@ -220,7 +259,7 @@ public class PetGame{
 				case "chngplayername":
 				case "8":
 					System.out.println("Enter your new name : ");
-					Player.Name = sc.next();
+					Player.Name = sc.nextLine();
 					System.out.println("You are now named: " + Player.Name);
 
 					break;
@@ -252,19 +291,27 @@ public class PetGame{
 					System.out.println("you are now " + Player.Name);
 					break;
 
-
-
 				case "save":
 				case "s":
-					Game.Save();
+					System.out.println("Enter the FileName of you Saved Game: ");
+					String SavedGameFile = sc.nextLine() + ".PetGameSavedGame";
+					Game.Save(SavedGameFile);
 
 					break;
 
 				case "load":
 				case "l":
-					Game.Load();
-					//Game = Game.Load();
-					Game = new Game(Game.Load());
+    			    try{
+						System.out.println("Enter the FileName of you Saved Game: ");
+    			        SavedGameFile = sc.nextLine() + ".PetGameSavedGame";  
+    			        ObjectInputStream in = new ObjectInputStream(new FileInputStream(SavedGameFile));  
+    			        Game=(Game)in.readObject();
+    			        Player=(Player)in.readObject();
+    			        Pet=(Pet)in.readObject(); 
+    			        System.out.println("Game of " + Player.Name + " Loaded!"); 
+    			    }catch(Exception e){
+    			        System.err.println(e);
+    			    }  
 
 					break;
 

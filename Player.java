@@ -3,6 +3,7 @@ import java.io.*;
 
 // Class of Player
 public class Player implements Serializable{
+	private static final long serialVersionUID = 4L;
 	String Name;         // Name of User
 	String Passwd;
 	int XpPoints;        // XpPoints of User
