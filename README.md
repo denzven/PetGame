@@ -29,17 +29,10 @@ Termux (Android):
   
 <img src="https://github.com/denzven/PetGame/blob/main/TermuxAdroidScreenShot?raw=true" alt="TermuxAndroidScreenShot" width="200">
 
-<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@DenzvenIgnatius/PetGame?embed=true"></iframe>
+Or try this Online verion!
 
-for running the code, you could use some kind of Online Java compiler too... 🤷
-eg..  
+https://replit.com/@DenzvenIgnatius/PetGame
 
-https://www.onlinegdb.com/online_java_compiler  
-https://www.programiz.com/java-programming/online-compiler/  
-
-
-or jus a simple ~~Google~~ DDG search...  
-https://duckduckgo.com/?q=java+compiler+online
 
 Thank you! pls star the repo [⭐](https://github.com/denzven/PetGame)    
 
