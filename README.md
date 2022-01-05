@@ -1,34 +1,51 @@
-<!DOCTYPE html>
-<head>
-<style>
+## Introducing PetGame! a simple console based game made by @denzven in Java ☕ 
 
-</style>
-</head>
-<body>
-<h2> PetGame by Denzven made in Java </h2>
-<p>
-Well... this game was my attempt at java and OOPs in general, wanted to know more on objects and classes and what could be more basic than the simplest PetGame! 
-</p>
+### About the Game
 
-<p>
-Ofc I was inspired by numerous apps and programs i have seen in the past including dankmemer's pet system and all those cookie clicker type games.  
-</p>
-<p>
-to run the program, have the JDK (Java Development Kit) installed and put in PATH, and run the following command ->  
-</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">javac </span>*.<span class="hljs-keyword">java </span>&amp;&amp; <span class="hljs-keyword">java </span>PetGame
-</code></pre>
+PetGame is my first big project in Java, the rules are simple,
+Adopt Pets and take good care of them, and gain XpPoints!
+Since this is an Object based game.. you can create almost infinite amount of Pets and Players!
 
-<p><a href="https://www.oracle.com/java/technologies/java-se-development-kit11-downloads.html">Download the JDK here</a></p>
-<p>
-this will compile the program using javac (JAVA Compiler) and run the compiled class file using JAVA
-</p>
-<p>ScreenShots:
-Yes this program is very colorful and uses ANSI colors for the terminal </p>
+### Features of the Game:
 
-<p>Thanks to This Answer on <a href="https://stackoverflow.com/a/45444716">StackOverFlow</a></p>
+1) Simple and intuitive interface 😄 
+2) Colorful console experience 🌈 
+3) Ability to adopt Pets and Create new Players 🐶 🧑🏼‍🤝‍🧑🏼 
+4) Object based Project which is extensible and customizable 🧰 
+5) Platform independent cuz java 💪🏼 
+6) Locally Savable in `.PetGameSavedGame` filetype 🗒️ 
 
-</p>
+### How to Start playing the game?
+- Windows & Mac:
+if you have Java Installed, run the `PetGame.jar` file below using the command:
+```bash
+java -jar PetGame.jar
+```
+
+- Android:
+On Android, running this game is extremly simple,
+jus run these following cmds on termux:
+
+```
+pkg install openjdk-17 -y && cd && git clone https://github.com/denzven/PetGame && cd PetGame/ && java -jar PetGame.jar
+```
+This will directly open the Game in console
+  
+if you want to compile the program too, you will need to download the [JavaJDK](https://www.oracle.com/java/technologies/java-se-development-kit11-downloads.html)
+and run this cmd:
+(works in all platforms)
+```
+javac *.java && java PetGame
+```
+
+Or the Easiest Method, Run it in replit!
+
+https://replit.com/@DenzvenIgnatius/PetGame?v=1
+
+`Please Note: the Save Game feature wont work online, its only for locally run games`
+
+## ScreenShots:
+
 <table>
 <tr>
 <td> 
@@ -36,7 +53,7 @@ Windows Terminal:
 </td> 
     
 <td> 
-<img src="./WindowsTerminalScreenShot.png" alt="WindowsTerminalScreenShot" width="300">
+<img src="https://raw.githubusercontent.com/denzven/PetGame/main/WindowsTerminalScreenShot.png" alt="WindowsTerminalScreenShot" width="300">
 </td>
 </tr>
 
@@ -46,7 +63,7 @@ Termux (Android):
 </td> 
   
 <td> 
-<img src="./TermuxAdroidScreenShot.png" alt="TermuxAndroidScreenShot" width="200">
+<img src="https://raw.githubusercontent.com/denzven/PetGame/main/TermuxAdroidScreenShot.png" alt="TermuxAndroidScreenShot" width="200">
 </td>
 </tr>
 
@@ -56,14 +73,12 @@ Or try this <a href="https://replit.com/@DenzvenIgnatius/PetGame?v=1"> Online ve
 </td>
 
 <td> 
-<img src="./ReplitScreenShot.jpg" alt="ReplitScreenShot" href="https://replit.com/@DenzvenIgnatius/PetGame?v=1" width="300">
+<img src="https://raw.githubusercontent.com/denzven/PetGame/main/ReplitScreenShot.jpg" alt="ReplitScreenShot" href="https://replit.com/@DenzvenIgnatius/PetGame?v=1" width="300">
 </td>
 </tr>
 </table>
-<p>
-Thank you! pls star the repo <a href="https://github.com/denzven/PetGame">⭐</a>
-</p>   
-<p>
-Made with Love 💜 by Denzven and Java 🍵
-</p>
-</html>
+
+
+Hope you will love it!
+
+Made by @denzven with Love 💜  and Java ☕ 
