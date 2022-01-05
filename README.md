@@ -36,6 +36,8 @@ This will directly open the Game in console
 if you want to compile the program too, you will need to download the [JavaJDK](https://www.oracle.com/java/technologies/java-se-development-kit11-downloads.html)
 and run this cmd:
 (works in all platforms)
+
+run this is `PetGame/src` folder  
 ```
 javac *.java && java PetGame
 ```
