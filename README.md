@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <body>
-<h2> PetGame by Denzven made in Java <h2>
+<h2> PetGame by Denzven made in Java </h2>
 <p>
 Well... this game was my attempt at java and OOPs in general, wanted to know more on objects and classes and what could be more basic than the simplest PetGame! 
 </p>
