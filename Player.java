@@ -45,6 +45,13 @@ public class Player implements Serializable{
 	public boolean   getHasPet()           {return hasPet;}
 	public boolean   getHasSetName()       {return hasSetName;}
 	public List<Pet> getPetList()          {return petList;}
+	public List<String> getPetNameList()      {
+		List<String> petNameList = new ArrayList<String>();
+		for(Pet pet : petList){
+			petNameList.add(pet.getName());
+		}
+		return petNameList;
+	}
 	public Pet       getPet()              {return pet;}
 
 
@@ -56,8 +63,8 @@ public class Player implements Serializable{
 			                 "\nnumberOfCommands: " + ConsoleColors.RED    + this.getNumberOfCommands() + ConsoleColors.RESET +
 			                 "\nhasPet: "           + ConsoleColors.RED    + this.getHasPet()           + ConsoleColors.RESET +
 			                 "\nhasSetName: "       + ConsoleColors.RED    + this.getHasSetName()       + ConsoleColors.RESET +
-			                 "\npetList: "          + ConsoleColors.RED    + this.getPetList()          + ConsoleColors.RESET +
-			                 "\nplayerPet: "        + ConsoleColors.PURPLE + this.getPet()              + ConsoleColors.RESET);
+			                 "\npetList: "          + ConsoleColors.RED    + this.getPetNameList()          + ConsoleColors.RESET +
+			                 "\nplayerPet: "        + ConsoleColors.PURPLE + this.getPet().getName()    + ConsoleColors.RESET);
 	}
 
 }

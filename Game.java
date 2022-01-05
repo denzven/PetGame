@@ -13,9 +13,26 @@ public class Game implements Serializable {
     }
 
     public List<Player> getPlayerList()  {return playerList;}
+    public List<String> getPlayerNameList()      {
+		List<String> playerNameList = new ArrayList<String>();
+		for(Player player : playerList){
+			playerNameList.add(player.getName());
+		}
+		return playerNameList;
+	}
 
     public String getStats(){
-        return ("\nplayerList: "       + ConsoleColors.GREEN  + this.getPlayerList()      + ConsoleColors.RESET);
+        return ("\nplayerList: "       + ConsoleColors.GREEN  + this.getPlayerNameList()      + ConsoleColors.RESET);
+    }
+
+    //Game leaderboard
+    public String getLeaderboard(){
+        String leaderboard = "";
+        // List<String> leaderboardList = new ArrayList<String>();;
+        for (Player player : playerList){   
+            leaderboard = leaderboard + player.getName() + ": " + player.getXpPoints() + "\n";
+        }
+        return leaderboard;
     }
 
     public String Save(String savedGameFile){
@@ -34,7 +51,7 @@ public class Game implements Serializable {
             System.out.println("Successfully Saved the Game to " + savedGameFile);
             return savedGameFile;
         } catch (IOException e) {
-            System.out.println("An error occurred.");
+            System.err.println("An error occurred.");
             e.printStackTrace();
             return "error";
         } 
