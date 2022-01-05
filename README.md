@@ -1,24 +1,30 @@
-## PetGame by Denzven made in Java  
-
+<!DOCTYPE html>
+<body>
+<h2> PetGame by Denzven made in Java <h2>
+<p>
 Well... this game was my attempt at java and OOPs in general, wanted to know more on objects and classes and what could be more basic than the simplest PetGame! 
-
+</p>
+<br><br>
+<p>
 Ofc I was inspired by numerous apps and programs i have seen in the past including dankmemer's pet system and all those cookie clicker type games.  
-
+</p>
+<br><br>
+<p>
 to run the program, have the JDK (Java Development Kit) installed and put in PATH, and run the following command ->  
+</p>
+<pre><code class="lang-bash"><span class="hljs-keyword">javac </span>*.<span class="hljs-keyword">java </span>&amp;&amp; <span class="hljs-keyword">java </span>PetGame
+</code></pre>
 
-```bash
-javac *.java && java PetGame
-```  
-[Download the JDK here](https://www.oracle.com/java/technologies/java-se-development-kit11-downloads.html)
-
+<p><a href="https://www.oracle.com/java/technologies/java-se-development-kit11-downloads.html">Download the JDK here</a></p>
+<p>
 this will compile the program using javac (JAVA Compiler) and run the compiled class file using JAVA
+</p>
+<p>ScreenShots:
+Yes this program is very colorful and uses ANSI colors for the terminal </p>
 
+<p>Thanks to This Answer on <a href="https://stackoverflow.com/a/45444716">StackOverFlow</a></p>
 
-ScreenShots:
-Yes this program is very colorful and uses ANSI colors for the terminal 
-
-Thanks to This Answer on [StackOverFlow](https://stackoverflow.com/a/45444716)
-
+</p>
 <table>
 <tr>
 <td> 
@@ -42,7 +48,7 @@ Termux (Android):
 
 <tr> 
 <td>
-Or try this Online verion!
+Or try this <a href="https://replit.com/@DenzvenIgnatius/PetGame?v=1"> Online verion! </a>
 </td>
 
 <td> 
@@ -53,7 +59,11 @@ Or try this Online verion!
   
 
 <br>
-Thank you! pls star the repo [⭐](https://github.com/denzven/PetGame)    
+<p>
+Thank you! pls star the repo <a href="https://github.com/denzven/PetGame">⭐</a>
+</p>   
 
 
-Made with Love 💜 by Denzven and Java 🍵  
+<p> Made with Love 💜 by Denzven and Java 🍵  </p>
+
+</html>
