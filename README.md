@@ -19,21 +19,40 @@ Yes this program is very colorful and uses ANSI colors for the terminal
 
 Thanks to This Answer on [StackOverFlow](https://stackoverflow.com/a/45444716)
 
-Windows Terminal:  
+<table>
+<tr>
+<td> 
+Windows Terminal: 
+</td> 
+    
+<td> 
+<img src="./WindowsTerminalScreenShot.png" alt="WindowsTerminalScreenShot" width="300">
+</td>
+</tr>
 
-![WindowsTerminalScreenShot](https://github.com/denzven/PetGame/blob/main/WindowsTerminalScreenShot?raw=true)    
-
-
-
-Termux (Android):  
+<tr>
+<td> 
+Termux (Android): 
+</td> 
   
-<img src="https://github.com/denzven/PetGame/blob/main/TermuxAdroidScreenShot?raw=true" alt="TermuxAndroidScreenShot" width="200">
+<td> 
+<img src="./TermuxAdroidScreenShot.png" alt="TermuxAndroidScreenShot" width="200">
+</td>
+</tr>
 
+<tr> 
+<td>
 Or try this Online verion!
+</td>
 
-https://replit.com/@DenzvenIgnatius/PetGame?v=1
+<td> 
+<img src="./ReplitScreenShot.jpg" alt="ReplitScreenShot" href="https://replit.com/@DenzvenIgnatius/PetGame?v=1" width="300">
+</td>
+</tr>
+</table>
+  
 
-
+<br>
 Thank you! pls star the repo [⭐](https://github.com/denzven/PetGame)    
 
 

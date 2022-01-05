@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="PetGame">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/PetGame.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
