@@ -57,7 +57,7 @@ Windows Terminal:
 </td> 
     
 <td> 
-<img src="https://raw.githubusercontent.com/denzven/PetGame/main/WindowsTerminalScreenShot.png" alt="WindowsTerminalScreenShot" width="300">
+<img src="https://raw.githubusercontent.com/denzven/PetGame/main/assets/WindowsTerminalScreenShot.png" alt="WindowsTerminalScreenShot" width="300">
 </td>
 </tr>
 
@@ -67,7 +67,7 @@ Termux (Android):
 </td> 
   
 <td> 
-<img src="https://raw.githubusercontent.com/denzven/PetGame/main/TermuxAdroidScreenShot.png" alt="TermuxAndroidScreenShot" width="200">
+<img src="https://raw.githubusercontent.com/denzven/PetGame/main/assets/TermuxAdroidScreenShot.png" alt="TermuxAndroidScreenShot" width="200">
 </td>
 </tr>
 
@@ -77,7 +77,7 @@ Or try this <a href="https://replit.com/@DenzvenIgnatius/PetGame?v=1"> Online ve
 </td>
 
 <td> 
-<img src="https://raw.githubusercontent.com/denzven/PetGame/main/ReplitScreenShot.jpg" alt="ReplitScreenShot" href="https://replit.com/@DenzvenIgnatius/PetGame?v=1" width="300">
+<img src="https://raw.githubusercontent.com/denzven/PetGame/main/assets/ReplitScreenShot.jpg" alt="ReplitScreenShot" href="https://replit.com/@DenzvenIgnatius/PetGame?v=1" width="300">
 </td>
 </tr>
 </table>
