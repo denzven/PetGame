@@ -1,14 +1,18 @@
 <!DOCTYPE html>
+<head>
+<style>
+
+</style>
+</head>
 <body>
 <h2> PetGame by Denzven made in Java </h2>
 <p>
 Well... this game was my attempt at java and OOPs in general, wanted to know more on objects and classes and what could be more basic than the simplest PetGame! 
 </p>
-<br><br>
+
 <p>
 Ofc I was inspired by numerous apps and programs i have seen in the past including dankmemer's pet system and all those cookie clicker type games.  
 </p>
-<br><br>
 <p>
 to run the program, have the JDK (Java Development Kit) installed and put in PATH, and run the following command ->  
 </p>
@@ -56,14 +60,10 @@ Or try this <a href="https://replit.com/@DenzvenIgnatius/PetGame?v=1"> Online ve
 </td>
 </tr>
 </table>
-  
-
-<br>
 <p>
 Thank you! pls star the repo <a href="https://github.com/denzven/PetGame">⭐</a>
 </p>   
-
-
-<p> Made with Love 💜 by Denzven and Java 🍵  </p>
-
+<p>
+Made with Love 💜 by Denzven and Java 🍵
+</p>
 </html>
