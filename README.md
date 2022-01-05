@@ -1,4 +1,6 @@
-## Introducing PetGame! a simple console based game made by @denzven in Java ☕ 
+## Introducing PetGame!
+
+A simple console based game made by @denzven in Java ☕ 
 
 ### About the Game
 
@@ -44,7 +46,7 @@ https://replit.com/@DenzvenIgnatius/PetGame?v=1
 
 `Please Note: the Save Game feature wont work online, its only for locally run games`
 
-## ScreenShots:
+### ScreenShots:
 
 <table>
 <tr>
