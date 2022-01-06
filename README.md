@@ -28,8 +28,14 @@ java -jar PetGame.jar
 On Android, running this game is extremly simple,
 jus run these following cmds on termux:
 
+(for First time running)
 ```
-pkg install openjdk-17 -y && cd && git clone https://github.com/denzven/PetGame && cd PetGame/ && java -jar PetGame.jar
+pkg install git -y && pkg install openjdk-17 -y && cd && git clone https://github.com/denzven/PetGame && cd PetGame/ && java -jar PetGame.jar
+```
+
+(Regular run)
+```
+cd PetGame/ && java -jar PetGame.jar 
 ```
 This will directly open the Game in console
   
@@ -50,37 +56,13 @@ https://replit.com/@DenzvenIgnatius/PetGame?v=1
 
 ### ScreenShots:
 
-<table>
-<tr>
-<td> 
-Windows Terminal: 
-</td> 
-    
-<td> 
-<img src="https://raw.githubusercontent.com/denzven/PetGame/main/assets/WindowsTerminalScreenShot.png" alt="WindowsTerminalScreenShot" width="300">
-</td>
-</tr>
-
-<tr>
-<td> 
-Termux (Android): 
-</td> 
-  
-<td> 
-<img src="https://raw.githubusercontent.com/denzven/PetGame/main/assets/TermuxAdroidScreenShot.png" alt="TermuxAndroidScreenShot" width="200">
-</td>
-</tr>
-
-<tr> 
-<td>
-Or try this <a href="https://replit.com/@DenzvenIgnatius/PetGame?v=1"> Online verion! </a>
-</td>
-
-<td> 
-<img src="https://raw.githubusercontent.com/denzven/PetGame/main/assets/ReplitScreenShot.jpg" alt="ReplitScreenShot" href="https://replit.com/@DenzvenIgnatius/PetGame?v=1" width="300">
-</td>
-</tr>
-</table>
+| Plafform | Image |
+---|---
+Windows Terminal:  |  ![WindowsTerminalScreenShot](https://raw.githubusercontent.com/denzven/PetGame/main/assets/WindowsTerminalScreenShot.png)
+|
+Termux (Android):  |  ![TermuxAdroidScreenShot](https://raw.githubusercontent.com/denzven/PetGame/main/assets/TermuxAdroidScreenShot.png)
+|
+ Or try this [Online verion!](https://replit.com/@DenzvenIgnatius/PetGame?v=1)  |  ![ReplitScreenShot](https://raw.githubusercontent.com/denzven/PetGame/main/assets/ReplitScreenShot.jpg)
 
 
 Hope you will love it!
