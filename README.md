@@ -58,8 +58,8 @@ https://replit.com/@DenzvenIgnatius/PetGame?v=1
 
 | Plafform | Image |
 ---|---
-Windows Terminal:  |  ![WindowsTerminalScreenShot](https://raw.githubusercontent.com/denzven/PetGame/main/assets/WindowsTerminalScreenShot.png)
-Termux (Android):  |  ![TermuxAdroidScreenShot](https://raw.githubusercontent.com/denzven/PetGame/main/assets/TermuxAdroidScreenShot.png)
+Windows Terminal:  |  ![WindowsTerminalScreenShot](https://raw.githubusercontent.com/denzven/PetGame/main/assets/WindowsTerminalScreenShot.jpg)
+Termux (Android):  |  ![TermuxAdroidScreenShot](https://raw.githubusercontent.com/denzven/PetGame/main/assets/TermuxAdroidScreenShot.jpg)
  Or try this [Online verion!](https://replit.com/@DenzvenIgnatius/PetGame?v=1)  |  ![ReplitScreenShot](https://raw.githubusercontent.com/denzven/PetGame/main/assets/ReplitScreenShot.jpg)
 
 
