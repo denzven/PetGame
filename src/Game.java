@@ -6,13 +6,18 @@ public class Game implements Serializable {
     private static final long serialVersionUID = 4L;
     List<Player> playerList;
     String gameIntro;
+    boolean isSet;
     public Game(
-            List<Player> playerList
+            List<Player> playerList,
+            boolean isSet
     ){
         this.playerList = playerList; // PlayerList of the Game
+        this.isSet = isSet; // PlayerList of the Game
     }
 
     public List<Player> getPlayerList()  {return playerList;}
+    public boolean      getIsSet()       {return isSet;}
+    
     public List<String> getPlayerNameList()      {
 		List<String> playerNameList = new ArrayList<String>();
 		for(Player player : playerList){

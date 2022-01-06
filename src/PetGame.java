@@ -33,11 +33,10 @@ public class PetGame{
 		List<Player> playerList = new ArrayList<>();
 		Pet pet = new Pet("DEFAULT_PET","DEFAULT_TYPE",0,100,100);
 		Player player = new Player("DEFAULT_PLAYER","DEFAULT_PASSWD",0,0,0,false,false,petList,pet);
-		Game game = new Game(playerList);
+		Game game = new Game(playerList,false);
 		
 		//Intro String
-		String gameIntro = game.getIntro();
-		System.out.println(gameIntro);
+		System.out.println(game.getIntro());
 
 		//Main while loop
 		while(true){
@@ -47,6 +46,34 @@ public class PetGame{
 
 			//PlayerInput
 			Scanner sc = new Scanner(System.in);
+
+			// Setting Player Name
+			if (!game.getIsSet()){
+				System.out.println(ConsoleColors.GREEN + "Do you want to start a NewGame or Load an Existing Game?: " + ConsoleColors.RESET);
+				System.out.println(ConsoleColors.RED + "0" + ConsoleColors.YELLOW + " [NewGame]"       + ConsoleColors.RESET + " | " +
+							       ConsoleColors.RED + "1" + ConsoleColors.YELLOW + " [Existing Game]" + ConsoleColors.RESET + " | ");
+				
+				String isSetOpt = sc.nextLine();
+				if (isSetOpt.equals("0")) {
+					System.out.println("Starting NewGame...");
+					game.isSet = true;
+				}
+				if (isSetOpt.equals("1")) {
+    			    try{
+						System.out.println("Enter the FileName of you Saved Game: ");
+    			        String savedGameFile = sc.nextLine() + ".PetGameSavedGame";  
+    			        ObjectInputStream inputGame = new ObjectInputStream(new FileInputStream(savedGameFile));  
+    			        game = (Game)inputGame.readObject();
+    			        player = (Player)inputGame.readObject();
+    			        pet = (Pet)inputGame.readObject(); 
+    			        System.out.println("Game of " + player.name + " Loaded!"); 
+						inputGame.close();
+						game.isSet = false;
+    			    }catch(Exception e){
+    			        System.err.println(e);
+    			    }  
+				}
+			}
 
 			// Setting Player Name
 			if (!player.getHasSetName()){
