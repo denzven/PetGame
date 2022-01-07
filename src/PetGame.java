@@ -68,7 +68,7 @@ public class PetGame{
     			        pet = (Pet)inputGame.readObject(); 
     			        System.out.println("Game of " + player.name + " Loaded!"); 
 						inputGame.close();
-						game.isSet = false;
+						game.isSet = true;
     			    }catch(Exception e){
     			        System.err.println(e);
     			    }  
