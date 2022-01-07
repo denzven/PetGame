@@ -32,10 +32,10 @@ public class Pet implements Serializable{
 
 	// Method for Getting Stats
 	public String getStats(){
-		return("\nname: "      + ConsoleColors.PURPLE + this.getName()       + ConsoleColors.RESET +
-					   "\ntype: "      + ConsoleColors.CYAN   + this.getType()       + ConsoleColors.RESET +
-					   "\nage: "       + ConsoleColors.RED    + this.getAge()        + ConsoleColors.RESET +
-					   "\nhunger: "    + LoadingAnim.Bar(this.getHunger())           +
-					   "\nhappiness: " + LoadingAnim.Bar(this.getHappiness()));
+		return ("\nname: "      + ConsoleColors.PURPLE + this.getName()       + ConsoleColors.RESET +
+				"\ntype: "      + ConsoleColors.CYAN   + this.getType()       + ConsoleColors.RESET +
+				"\nage: "       + ConsoleColors.RED    + this.getAge()        + ConsoleColors.RESET +
+				"\nhunger: "    + LoadingAnim.Bar(this.getHunger())           +
+				"\nhappiness: " + LoadingAnim.Bar(this.getHappiness()));
 	}
 }

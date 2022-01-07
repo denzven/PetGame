@@ -10,6 +10,7 @@
  * Please do Star the repo on Github
  * {@link https://github.com/denzven/PetGame }
  */
+
 import java.util.*;
 import java.io.*;
 
@@ -21,6 +22,7 @@ public class PetGame{
 	 * this includes the main "while loop" and all input fields like player name,
 	 * pet name, etc.
 	 */
+
 	public static void main(String[] args) {
 		/**
 		 * Main function of PetGame
@@ -32,8 +34,8 @@ public class PetGame{
 		List<Player> playerList = new ArrayList<>();
 		Pet pet = new Pet("DEFAULT_PET","DEFAULT_TYPE",0,100,100);
 		Player player = new Player("DEFAULT_PLAYER","DEFAULT_PASSWD",0,0,0,false,false,petList,pet);
-		Game game = new Game(playerList,false);
-		
+		Game game = new Game(playerList,false,false);
+
 		//Intro String
 		System.out.println(game.getIntro());
 
@@ -56,6 +58,7 @@ public class PetGame{
 				if (isSetOpt.equals("0")) {
 					System.out.println("Starting NewGame...");
 					game.isSet = true;
+					game.isSaved = false;
 				}
 				if (isSetOpt.equals("1")) {
 				    try{
@@ -68,6 +71,7 @@ public class PetGame{
 				        System.out.println("Game of " + player.name + " Loaded!"); 
 						inputGame.close();
 						game.isSet = true;
+						game.isSaved = true;
 				    }catch(Exception e){
 				        System.err.println(e);
 				    }  
@@ -83,11 +87,13 @@ public class PetGame{
 				        System.out.println("Sample Game of " + player.name + " Loaded!"); 
 						inputGame.close();
 						game.isSet = true;
+						game.isSaved = false;
 				    }catch(Exception e){
 				        System.err.println(e);
 				    }  
 				}
 			}
+
 			// Setting Player Name
 			if (!player.getHasSetName()){
 				System.out.println(ConsoleColors.GREEN + "Enter your Name: " + ConsoleColors.RESET);
@@ -99,6 +105,7 @@ public class PetGame{
 				System.out.println(ConsoleColors.GREEN + player.name + ConsoleColors.RESET +", good to see you here!");
 				player.hasSetName = true;
 			}
+
 			// Adopting a Pet
 			if (!player.getHasPet()){
 				System.out.println("What do you want to Name your New Pet? " + ConsoleColors.RED + "[Type Name of your Pet]" + ConsoleColors.RESET);
@@ -111,24 +118,10 @@ public class PetGame{
 				player.hasPet = true;
 				System.out.println(ConsoleColors.GREEN + player.name + ConsoleColors.RESET + ", you are all set and ready! take good care of your " + player.pet.getType() + " ," + ConsoleColors.PURPLE + player.pet.getName() + ConsoleColors.RESET + ConsoleColors.RESET + "! ");
 			}
-			// Entering cmd:
-			System.out.println("Enter cmd: ");
-			System.out.println(ConsoleColors.CYAN + "1" + ConsoleColors.YELLOW + " [stats]"    + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "2" + ConsoleColors.YELLOW + " [feed]"     + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "3" + ConsoleColors.YELLOW + " [play]"     + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "4" + ConsoleColors.YELLOW + " [sleep]"    + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "5" + ConsoleColors.YELLOW + " [chngpetname]" + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "6" + ConsoleColors.YELLOW + " [newpet]"   + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "7" + ConsoleColors.YELLOW + " [chngpet]"  + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "8" + ConsoleColors.YELLOW + " [chngplayername]" + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "9" + ConsoleColors.YELLOW + " [newplayer]"   + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "10" + ConsoleColors.YELLOW + " [chngplayer]"  + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "s" + ConsoleColors.YELLOW + " [save]"     + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "l" + ConsoleColors.YELLOW + " [load]"     + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "0" + ConsoleColors.YELLOW + " [help]"     + ConsoleColors.RESET + " | " +
-							   ConsoleColors.CYAN + "x" + ConsoleColors.RED    + " [exit]"     + ConsoleColors.RESET + " | " +
-							   ConsoleColors.RESET);
+
+			System.out.println(game.getCmds());
 			String input = sc.nextLine();
+
 			//Counts the Number of Commands and gets the Age of Pet with it
 			player.numberOfCommands = player.getNumberOfCommands() + 1;
 			if(player.getNumberOfCommands() % 20 == 0){player.pet.age++;}
@@ -143,34 +136,37 @@ public class PetGame{
 			if(player.getXpPoints() < 0){
 				player.xpPoints = 1;
 			}
+
 			// Switch for the commands
 			switch (input.toLowerCase()) {
 				/**
 				 * Switch case style of input,
 				 * to evaluate the action by Player.
 				 */
+
 				case "stats":
 				case "1":
-				/**
-				 * Stats of Pet,Player and Game Classes,
-				 * this includes info like:
-				 * 1. How many Pets does the Player have.
-				 * 2. How many Players are there in the Game.
-				 * 3. Name and other info of the pet and player.
-				 */
+					/**
+					 * Stats of Pet,Player and Game Classes,
+					 * this includes info like:
+					 * 1. How many Pets does the Player have.
+					 * 2. How many Players are there in the Game.
+					 * 3. Name and other info of the pet and player.
+					 */
 					System.out.println(ConsoleColors.CYAN + "Getting Pet & Player stats...\n" + ConsoleColors.RESET);
 					System.out.println(player.pet.getStats());
 					System.out.println(player.getStats());
 					System.out.println(game.getStats());
 					System.out.println(ConsoleColors.RESET + "\n\n");
 					break;
+
 				case "feed":
 				case "2":
-				/**
-				 * Feed command for the Pet,
-				 * This command increases the Hunger Stat of the Pet "dynamically",
-				 * and grants the player 10 XpPoints.
-				 */
+					/**
+					 * Feed command for the Pet,
+					 * This command increases the Hunger Stat of the Pet "dynamically",
+					 * and grants the player 10 XpPoints.
+					 */
 					System.out.println("You fed "+ ConsoleColors.PURPLE + player.pet.getName() + ConsoleColors.RESET + " some tasty food");
 					// Range of Values for getting behaviour
 					if(player.pet.getHunger() <= 100 && player.pet.getHunger() > 80){
@@ -196,12 +192,14 @@ public class PetGame{
 					}else{
 						System.out.println("Error Occurred");
 					}
+					game.isSaved = false;
 					break;
+
 				case "play":
 				case "3":
-				/**
-				 * 
-				 */
+					/**
+					 * 
+					 */
 					System.out.println("You played catch with " + player.pet.getName());
 					// Range of Values for getting behaviour
 					if(player.pet.getHappiness() <= 100 && player.pet.getHappiness() > 80){
@@ -230,24 +228,37 @@ public class PetGame{
 					else{
 						System.out.println("Error Occurred");
 					}
+					game.isSaved = false;
 					break;
-				//Sleep Command
+
 				case "sleep":
 				case "4":
+					/**
+					 * 
+					 */ 
 					System.out.println(ConsoleColors.PURPLE + player.pet.getName() + ConsoleColors.RESET + " had a long peaceful sleep!");
 					player.pet.happiness = 10;
 					player.pet.hunger = 10;
 					player.xpPoints = player.getXpPoints() + 5;
+					game.isSaved = false;
 					break;
-				// Change name command
+
 				case "chngpetname":
 				case "5":
+					/**
+					 * 
+					 */ 
 					System.out.println("Enter the new name of your Pet: ");
 					player.pet.name = sc.nextLine();
 					System.out.println("Your Pet is now named: " + player.pet.getName());
+					game.isSaved = false;
 					break;
+
 				case "newpet":
 				case "6":
+					/**
+					 * 
+					 */ 
 					System.out.println("What do you want to Name your New Pet? " + ConsoleColors.RED + "[Type Name of your Pet]" + ConsoleColors.RESET);
 					String newPetName = sc.nextLine();
 					System.out.println("What type of Pet do you want " + ConsoleColors.YELLOW + newPetName  + ConsoleColors.RESET + " to be?");
@@ -258,9 +269,14 @@ public class PetGame{
 					player.hasPet = true;
 					System.out.println(ConsoleColors.GREEN + player.getName() + ConsoleColors.RESET + ", you are all set and ready! take good care of your " + player.pet.getType() + " ," + ConsoleColors.PURPLE + player.pet.getName() + ConsoleColors.RESET + ConsoleColors.RESET + "! ");
 					System.out.println(player.getName() + ", you have a total of " + player.getPetList().size() + " pets!");
+					game.isSaved = false;
 					break;
+
 				case "chngpet":
 				case "7":
+					/**
+					 * 
+					 */ 
 					System.out.println("Which Pet do you want to take care of?");
 					for (int i = 0; i < player.getPetList().size(); i++) {
 						pet =  player.getPetList().get(i);
@@ -269,17 +285,25 @@ public class PetGame{
 					int playerInput = sc.nextInt();
 					player.pet = player.getPetList().get(playerInput);
 					System.out.println("you are now taking care of " + player.pet.getName());
+					game.isSaved = false;
 					break;
-				// Change name command
+
 				case "chngplayername":
 				case "8":
+					/**
+					 * 
+					 */ 
 					System.out.println("Enter your new name : ");
 					player.name = sc.nextLine();
 					System.out.println("You are now named: " + player.name);
+					game.isSaved = false;
 					break;
 					
 				case "newplayer":
 				case "9":
+					/**
+					 * 
+					 */ 
 					System.out.println(ConsoleColors.GREEN + "Enter your Name: " + ConsoleColors.RESET);
 					String name = sc.nextLine();
 					System.out.println(ConsoleColors.GREEN + "Enter your Passwd: " + ConsoleColors.RESET);
@@ -289,9 +313,14 @@ public class PetGame{
 					System.out.println(ConsoleColors.GREEN + player.name + ConsoleColors.RESET +", have a great time here!");
 					game.playerList.add(player);
 					player.hasSetName = true;
+					game.isSaved = false;
 					break;
+
 				case "chngplayer":
 				case "10":
+					/**
+					 * 
+					 */ 
 					System.out.println("Which Player do you want to change to?");
 					for (int i = 0; i < player.getPetList().size(); i++) {
 						player =  game.playerList.get(i);
@@ -300,20 +329,41 @@ public class PetGame{
 					playerInput = sc.nextInt();
 					player = game.playerList.get(playerInput);
 					System.out.println("you are now " + player.name);
+					game.isSaved = false;
 					break;
+
 				case "save":
 				case "s":
+					/**
+					 * 
+					 */ 
+					if (game.savedGameFileName != null) {
+						game.Save(game.savedGameFileName);
+					}else{
 					System.out.println("Enter the FileName of you Saved Game: ");
 					String savedGameFile = sc.nextLine() + ".PetGameSavedGame";
+					game.savedGameFileName = savedGameFile;
 					game.Save(savedGameFile);
+					}
+					String savedGameFile = game.savedGameFileName;
+					game.isSaved = true;
 					break;
+
 				case "leaderboard":
 				case "lb":
+					/**
+					 * 
+					 */ 
 					System.out.println("Leaderboard:");
 					System.out.println(game.getLeaderboard());
+					game.isSaved = false;
 					break;
+
 				case "load":
 				case "l":
+					/**
+					 * 
+					 */ 
 				    try{
 						System.out.println("Enter the FileName of you Saved Game: ");
 				        savedGameFile = sc.nextLine() + ".PetGameSavedGame";  
@@ -327,16 +377,42 @@ public class PetGame{
 				        System.err.println(e);
 				    }  
 					break;
+
 				case "help":
 				case "0":
+					/**
+					 * 
+					 */ 
 					System.out.println("The Help Command isn't ready yet");
+					game.isSaved = false;
 					break;
+
 				case "exit":
 				case "x":
+					/**
+					 * 
+					 */ 
+					if (!game.isSaved) {
+						System.out.println("Game is not Saved!");
+						System.out.println(game.savedGameFileName);
+						System.out.println("Do you wish to save?[y/n]:");
+						String SaveInput = sc.nextLine();
+						if (SaveInput.toLowerCase().equals("y")) {
+							System.out.println("Type s to save game");
+							break;
+						}
+						if (SaveInput.toLowerCase().equals("n")) {
+							System.out.println("");							
+						}
+						else{
+							System.out.println("Invalid operation");
+						}
+					}
 					System.out.println("Sad to see you go :(");
 					System.out.println("Star the repo if you loved this program!");
 					System.exit(0);
 					break;
+
 				default:
 					System.err.println("Invalid operation");
 					System.out.println("\n\n");
@@ -344,4 +420,3 @@ public class PetGame{
 		}
 	}
 }
-

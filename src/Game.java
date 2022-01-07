@@ -6,17 +6,25 @@ public class Game implements Serializable {
     private static final long serialVersionUID = 4L;
     List<Player> playerList;
     String gameIntro;
+    String gameCmds;
+    String savedGameFileName;
     boolean isSet;
+    boolean isSaved;
     public Game(
             List<Player> playerList,
-            boolean isSet
+            boolean isSet,
+            boolean isSaved
     ){
         this.playerList = playerList; // PlayerList of the Game
-        this.isSet = isSet; // PlayerList of the Game
+        this.isSet = isSet;
+        this.isSaved = isSaved;
+        this.savedGameFileName = savedGameFileName;
     }
 
     public List<Player> getPlayerList()  {return playerList;}
     public boolean      getIsSet()       {return isSet;}
+    public boolean      getIsSaved()       {return isSaved;}
+    public String      getSavedGameFileName()       {return savedGameFileName;}
     
     public List<String> getPlayerNameList()      {
 		List<String> playerNameList = new ArrayList<String>();
@@ -70,62 +78,24 @@ gameIntro = ConsoleColors.GREEN +
 ConsoleColors.RESET + ConsoleColors.CYAN + "Welcome to PetGame by Denzven! \n This game is made in java and is a starter project of mine! \n Hope you love it!\n\n" + ConsoleColors.RESET;
         return gameIntro;
     }
+    public String getCmds(){
+        gameCmds = "Enter cmd: \n" +
+                    ConsoleColors.CYAN + "1"  + ConsoleColors.YELLOW + " [stats]"          + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "2"  + ConsoleColors.YELLOW + " [feed]"           + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "3"  + ConsoleColors.YELLOW + " [play]"           + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "4"  + ConsoleColors.YELLOW + " [sleep]"          + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "5"  + ConsoleColors.YELLOW + " [chngpetname]"    + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "6"  + ConsoleColors.YELLOW + " [newpet]"         + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "7"  + ConsoleColors.YELLOW + " [chngpet]"        + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "8"  + ConsoleColors.YELLOW + " [chngplayername]" + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "9"  + ConsoleColors.YELLOW + " [newplayer]"      + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "10" + ConsoleColors.YELLOW + " [chngplayer]"     + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "s"  + ConsoleColors.YELLOW + " [save]"           + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "l"  + ConsoleColors.YELLOW + " [load]"           + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "0"  + ConsoleColors.YELLOW + " [help]"           + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "x"  + ConsoleColors.RED    + " [exit]"           + ConsoleColors.RESET + " | " +
+                    ConsoleColors.RESET;
+        return gameCmds;
+    }
 }
 
-/*
- * <Game>
- *     |
- *     \---> <Player> 
- *     |           |
- *     |           \---> Pet
- *     |           |     
- *     |           \---> Pet  
- *     |           |
- *     |           \---> Pet   
- *     |
- *     \---> <Player> 
- *     |           |
- *     |           \---> Pet
- *     |           |     
- *     |           \---> Pet  
- *     |           |
- *     |           \---> Pet   
- *     |
- *     \---> <Player> 
- *                 |
- *                 \---> Pet
- *                 |     
- *                 \---> Pet  
- *                 |
- *                 \---> Pet   
- *
- */
-
-/*
- *  Game
- *     |
- *     \--->Liam 
- *     |       |
- *     |       \--->Max
- *     |       |     
- *     |       \--->Charlie  
- *     |       |
- *     |       \--->Cooper  
- *     |
- *     \--->Noah 
- *     |       |
- *     |       \--->Bella
- *     |       |     
- *     |       \--->Luna
- *     |       |
- *     |       \--->Lucy  
- *     |
- *     \--->Olivia 
- *               |
- *               \--->Buddy
- *               |     
- *               \--->Rocky
- *               |
- *               \--->Tucker 
- *
- */
