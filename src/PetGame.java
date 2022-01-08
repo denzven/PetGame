@@ -38,7 +38,6 @@ public class PetGame{
 
 		//Intro String
 		System.out.println(game.getIntro());
-
 		//Main while loop
 		while(true){
 			/**
@@ -280,7 +279,7 @@ public class PetGame{
 					System.out.println("Which Pet do you want to take care of?");
 					for (int i = 0; i < player.getPetList().size(); i++) {
 						pet =  player.getPetList().get(i);
-						System.out.println("[" + i + "] " + pet.name);
+						System.out.println(ConsoleColors.CYAN + "[" + ConsoleColors.RESET + i + ConsoleColors.CYAN + "] " + ConsoleColors.YELLOW + pet.name + ConsoleColors.RESET);
 					}
 					int playerInput = sc.nextInt();
 					player.pet = player.getPetList().get(playerInput);
@@ -324,7 +323,7 @@ public class PetGame{
 					System.out.println("Which Player do you want to change to?");
 					for (int i = 0; i < player.getPetList().size(); i++) {
 						player =  game.playerList.get(i);
-						System.out.println("[" + i + "] " + player.name);
+						System.out.println(ConsoleColors.CYAN + "[" + ConsoleColors.RESET + i + ConsoleColors.CYAN + "] " + ConsoleColors.YELLOW + player.name + ConsoleColors.RESET);
 					}
 					playerInput = sc.nextInt();
 					player = game.playerList.get(playerInput);
@@ -356,6 +355,15 @@ public class PetGame{
 					 */ 
 					System.out.println("Leaderboard:");
 					System.out.println(game.getLeaderboard());
+					game.isSaved = false;
+					break;
+
+				case "List of Commands":
+				case "cmds":
+					/**
+					 * 
+					 */ 
+					System.out.println(game.getCmds());
 					game.isSaved = false;
 					break;
 

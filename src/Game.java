@@ -79,23 +79,24 @@ ConsoleColors.RESET + ConsoleColors.CYAN + "Welcome to PetGame by Denzven! \n Th
         return gameIntro;
     }
     public String getCmds(){
-        gameCmds = "Enter cmd: \n" +
-                    ConsoleColors.CYAN + "1"  + ConsoleColors.YELLOW + " [stats]"          + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "2"  + ConsoleColors.YELLOW + " [feed]"           + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "3"  + ConsoleColors.YELLOW + " [play]"           + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "4"  + ConsoleColors.YELLOW + " [sleep]"          + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "5"  + ConsoleColors.YELLOW + " [chngpetname]"    + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "6"  + ConsoleColors.YELLOW + " [newpet]"         + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "7"  + ConsoleColors.YELLOW + " [chngpet]"        + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "8"  + ConsoleColors.YELLOW + " [chngplayername]" + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "9"  + ConsoleColors.YELLOW + " [newplayer]"      + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "10" + ConsoleColors.YELLOW + " [chngplayer]"     + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "s"  + ConsoleColors.YELLOW + " [save]"           + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "l"  + ConsoleColors.YELLOW + " [load]"           + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "0"  + ConsoleColors.YELLOW + " [help]"           + ConsoleColors.RESET + " | " +
-                    ConsoleColors.CYAN + "x"  + ConsoleColors.RED    + " [exit]"           + ConsoleColors.RESET + " | " +
+        gameCmds = //"Enter cmd: \n" +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "1"   + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " stats"          + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "2"   + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " feed"           + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "3"   + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " play"           + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "4"   + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " sleep"          + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "5"   + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " chngpetname"    + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "6"   + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " newpet"         + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "7"   + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " chngpet"        + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "8"   + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " chngplayername" + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "9"   + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " newplayer"      + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "10"  + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " chngplayer"     + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "s"   + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " save"           + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "lb"  + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " leaderboard"    + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "cmds"+ ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " commands"       + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "l"   + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " load"           + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "0"   + ConsoleColors.CYAN + "]" + ConsoleColors.YELLOW + " help"           + ConsoleColors.RESET + " | " +
+                    ConsoleColors.CYAN + "[" + ConsoleColors.RESET + "x"   + ConsoleColors.CYAN + "]" + ConsoleColors.RED    + " exit"           + ConsoleColors.RESET + " | " +
                     ConsoleColors.RESET;
         return gameCmds;
     }
 }
-
