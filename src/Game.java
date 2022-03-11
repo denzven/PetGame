@@ -43,7 +43,7 @@ public class Game implements Serializable {
         String leaderboard = "";
         // List<String> leaderboardList = new ArrayList<String>();;
         for (Player player : playerList){   
-            leaderboard = leaderboard + player.getName() + ": " + player.getXpPoints() + "\n";
+            leaderboard = leaderboard + ConsoleColors.GREEN + player.getName() + ": " + ConsoleColors.YELLOW + player.getXpPoints() + ConsoleColors.RESET + "\n";
         }
         return leaderboard;
     }

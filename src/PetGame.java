@@ -199,7 +199,7 @@ public class PetGame{
 					/**
 					 * 
 					 */
-					System.out.println("You played catch with " + player.pet.getName());
+					System.out.println("You played " + ConsoleColors.GREEN + player.pet.getRandGame() + ConsoleColors.RESET + " with "+ ConsoleColors.PURPLE + player.pet.getName() + ConsoleColors.RESET + "!");
 					// Range of Values for getting behaviour
 					if(player.pet.getHappiness() <= 100 && player.pet.getHappiness() > 80){
 						System.out.println(ConsoleColors.PURPLE + player.pet.getName() + ConsoleColors.RESET + " has played and had fun already! it wants to Sleep!");

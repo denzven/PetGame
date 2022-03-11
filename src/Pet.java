@@ -8,6 +8,7 @@ public class Pet implements Serializable{
 	int age;       //Age of Pet
 	int hunger;    //Hunger lvl of Pet
 	int happiness; //Happiness lvl of Pet
+	String randGame; //Random game of Pet
 
 	public Pet(
 			String name,
@@ -23,12 +24,21 @@ public class Pet implements Serializable{
 			this.happiness = happiness; //Happiness lvl of Pet
 		  }
 
+
 	// Methods to get all variables in Class
 	public String getName()     {return name;}
 	public String getType()     {return type;}
 	public int    getAge()      {return age;}
 	public int    getHunger()   {return hunger;}
 	public int    getHappiness(){return happiness;}
+
+	//Methods to get a random game
+	public String getRandGame(){
+		String[] games = {"Hangman", "Tic-Tac-Toe", "Pictionary", "Word Guess", "Rock Paper Scissors", "Wordle", "Chess", "Catch", "with a Frizbee", "The Game", "with a Ball"};
+		int rand = (int) (Math.random() * games.length);
+		this.randGame = games[rand];
+		return this.randGame;
+	  }
 
 	// Method for Getting Stats
 	public String getStats(){
